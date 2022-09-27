@@ -66,10 +66,10 @@ def mail(Originurl, Actionurl, Username, Password):
 
     
     
-# on crée la connexion  
+ 
     context = ssl.create_default_context()  
     with smtplib.SMTP_SSL(smtp_address, smtp_port, context=context) as server:  
-  # connexion au compte  
+  
      server.login(email_address, email_password)  
      server.sendmail(email_address, email_receiver, message.as_string())
 
