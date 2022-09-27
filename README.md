@@ -50,7 +50,7 @@ You can choose between two types of exfiltration :
 
 If you want the result remotely and you don't have internet restriction, it can be a good way.
 
-![](https://zupimages.net/up/22/39/6iv2.png)
+![](https://zupimages.net/up/22/39/fpqq.png)
 
 ###### By file
 
@@ -72,7 +72,7 @@ You have to change de value of the following lines :
 24-25 : enter the information taken from the supplier's website
 28-30 : enter the information on your e-mail address
 33 : enter the recipient's information
-![](https://zupimages.net/up/22/39/fpqq.png)
+![](https://zupimages.net/up/22/38/ug6s.png)
 
 
 ###### By file
