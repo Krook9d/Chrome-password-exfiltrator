@@ -135,7 +135,10 @@ You could face false positives if this alert is activated on a perimeter where p
 
 ### Patchlog
 
+To do :
+
 - Flipper zero / Rubber Ducky (bad usb configuration) 
 - Design of mail template for exfiltration
 - Design of file template for exfiltration
+- Splunk rule for Email Version
 
