@@ -34,6 +34,7 @@ Chrome stores all the sign-on secrets into the internal database file called 'We
 The logins table mainly contains the information about sign-on secrets such as website URL, username, password fields, etc. All theise information are stored in clear text except passwords which are encrypted.
 
 Google Chrome encrypts passwords with the help of CryptProtectData function, built into Windows. Now while this can be a very secure function using a triple-DES algorithm and creating user-specific keys to encrypt the data, it can still be decrypted as long as you are logged into the same account as the user who encrypted it.
+
 The CryptProtectData function has a twin, which does the opposite; CryptUnprotectData, which... Well, you guessed it, decrypts the data.
 
 Obviously this is going to be very useful while trying to decrypt the stored passwords.
