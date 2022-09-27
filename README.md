@@ -4,11 +4,11 @@
 
 **Table of Contents**
 
-
+<!-- toc -->
 
 [TOC]
 
-#About The Project
+# About The Project
 
 This is a Chrome Password grabber. When your victim clicks on the .exe, their chrome passwords and usernames are written to a file or sent by email.
 
@@ -18,28 +18,28 @@ Chrome stores all the sign-on secrets into the internal database file called 'We
 The logins table mainly contains the information about sign-on secrets such as website URL, username, password fields, etc. All this information is stored in the clear text except passwords which are in encrypted format.
 Google Chrome encrypt the password with the help of CryptProtectData function, built into Windows. Now while this can be a very secure function using a triple-DES algorithm and creating user-specific keys to encrypt the data, it can still be decrypted as long as you are logged into the same account as the user who encrypted it.The CryptProtectData function has a twin, who does the opposite to it; CryptUnprotectData, which... Well, you guessed it, decrypts the data. And obviously this is going to be very useful in trying to decrypt the stored passwords.
 
-##Disclaimer
+## Disclaimer
 
 This is for educational purposes only I do not take an responsibility for actions that people use this for.
 
 
-###Requierements
+### Requierements
 
 > pip install pypiwin32
 Microsoft Visual C++ 14.0 or greater is required
 pip install pycrypto
 
-###2 type of exfiltration
+### 2 type of exfiltration
 
 You can choose between two types of exfiltration : 
 
-######By email
+###### By email
 
 If you want the result remotely and you don't have internet restriction, it can be a good way.
 
 ![](https://zupimages.net/up/22/39/6iv2.png)
 
-######By file
+###### By file
 
 This way can be more adequate if you have restriction with a proxy for the email connection and if you have a physical access to the machine.
 This version work goods with rubber ducky or bash bunny or flipper zero
@@ -49,10 +49,10 @@ The script will grab the password and wrote it to a file. Feel free to specify a
 
 Youtube link : https://youtu.be/3LgiQ_YQL6w
 
-###Configuration
+### Configuration
 
 
-######By email
+###### By email
 
 You have to change de value of the following lines :
 
@@ -62,13 +62,13 @@ You have to change de value of the following lines :
 ![](https://zupimages.net/up/22/38/ug6s.png)
 
 
-######By file
+###### By file
 
 You can add code lines to specify an output file and add command to clean the log 
 
 
 
-####.EXE convertion :
+#### .EXE convertion :
 
 To make our script compatible and masquerading, we will have to convert it to .exe,
 
@@ -82,7 +82,7 @@ I have reproduced the installation file of Windows Edge as an example.
 
 
 
-###Detection
+### Detection
 
 We presume that your anti-virus doesn't detect the malware (Highly likely if it is windows defender). You can detect this type of exfiltration with several SPLUNK rules :
 
@@ -96,22 +96,22 @@ This rule will allow you to detect exfiltration with notepad.exe when it is trig
 
 test.txt was made by a call of notepad with a PowerShell script and ChromeIDS by the script presented in this page.
 
-######Testing
+###### Testing
 
 You can test this alert with PowerShell and the following command : 
 
  	 New-Item C:\Users\Public\test.txt
 
-######False positive
+###### False positive
 
 In a large computer network, it is necessary to segment the area of this alert, in fact it is better to target end-user PCs, employees and any machine where performing automatic file writing operations is not at all usual in the work habits of the users.
 You could have false positives if this alert is activated on a perimeter where patch deployment or other maintenance operations are common.
 
-###Flipper zero (bad usb configuration)
+### Flipper zero (bad usb configuration)
 
 
 	 coming soon
 
 
-###Links
+### Links
 
