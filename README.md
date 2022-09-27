@@ -27,9 +27,12 @@
 This is a Chrome Passwords grabber. When your victim clicks on the .exe, their chrome passwords and usernames are written on a file or sent by email.
 
 
-Like other browsers Chrome has a built-in login password manager functionality which keeps track of the login secrets of all visited websites. Whenever a user logs in to any website, they will be prompted to save their credentials for later use and if the user chooses so, then the username and passwords will be stored in an internal  database. So next time onwards, when they visit that same website, they will be automatically logged in using these stored credentials which saves hassle of entering the credentials every time.
+Like other browsers Chrome has a built-in login password manager functionality which keeps track of the login secrets of all visited websites. Whenever a user logs in to any website, they will be prompted to save their credentials for later use and if the user chooses so, then the username and passwords will be stored in an internal  database.
+So next time onwards, when they visit that same website, they will be automatically logged in using these stored credentials which saves hassle of entering the credentials every time.
 
-Chrome stores all the sign-on secrets into the internal database file called 'Web data' in the current user profile folder. A newer version has moved the login passwords related database into a new file named 'Login Data'.This database file is in SQLite format and contain number of tables storing different kind of data such as auto complete, search keyword, ie7logins etc. in addition to login secrets.
+Chrome stores all the sign-on secrets into the internal database file called 'Web data' in the current user profile folder. A newer version has moved the login passwords related database into a new file named 'Login Data'.
+
+This database file is in SQLite format and contain number of tables storing different kind of data such as auto complete, search keyword, ie7logins etc. in addition to login secrets.
 
 The logins table mainly contains the information about sign-on secrets such as website URL, username, password fields, etc. All theise information are stored in clear text except passwords which are encrypted.
 
