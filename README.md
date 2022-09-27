@@ -31,15 +31,12 @@ Like other browsers Chrome has a built-in login password manager functionality w
 So next time onwards, when they visit that same website, they will be automatically logged in using these stored credentials which saves hassle of entering the credentials every time.
 
 Chrome stores all the sign-on secrets into the internal database file called 'Web data' in the current user profile folder. A newer version has moved the login passwords related database into a new file named 'Login Data'.
-
 This database file is in SQLite format and contain number of tables storing different kind of data such as auto complete, search keyword, ie7logins etc. in addition to login secrets.
-
 The logins table mainly contains the information about sign-on secrets such as website URL, username, password fields, etc. All theise information are stored in clear text except passwords which are encrypted.
 
 Google Chrome encrypts passwords with the help of CryptProtectData function, built into Windows. Now while this can be a very secure function using a triple-DES algorithm and creating user-specific keys to encrypt the data, it can still be decrypted as long as you are logged into the same account as the user who encrypted it.
 
 The CryptProtectData function has a twin, which does the opposite; CryptUnprotectData, which... Well, you guessed it, decrypts the data.
-
 Obviously this is going to be very useful while trying to decrypt the stored passwords.
 
 ## Disclaimer
