@@ -142,3 +142,4 @@ To do :
 - Design of file template for exfiltration
 - Splunk rule for Email Version
 
+Contact : krook9d@gmail.com
