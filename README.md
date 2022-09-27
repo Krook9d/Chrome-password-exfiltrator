@@ -40,8 +40,7 @@ This is for educational purposes only I do not take an responsibility for action
 ### Requierements
 
 > pip install pypiwin32
-Microsoft Visual C++ 14.0 or greater is required
-pip install pycrypto
+pip install pycryptodome
 
 ### 2 type of exfiltration
 
