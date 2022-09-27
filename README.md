@@ -1,4 +1,4 @@
-# Chrome password exfiltrator
+# Chrome passwords exfiltrator
 
 ![](https://zupimages.net/up/22/38/sfmh.png)
 
@@ -24,17 +24,17 @@
 
 # About The Project
 
-This is a Chrome Password grabber. When your victim clicks on the .exe, their chrome passwords and usernames are written to a file or sent by email.
+This is a Chrome Passwords grabber. When your victim clicks on the .exe, their chrome passwords and usernames are written on a file or sent by email.
 
 
-Like other browsers Chrome also has built-in login password manager functionality which keeps track of the login secrets of all visited websites. Whenever user logins to any website, he/she will be prompted to save the credentials for later use and if user chooses so, then the username & passwords will be stored in internal login database. So next time onwards whenever user visits that website, he will be automatically logged in using these stored credentials which saves hassle of entering the credentials every time.
-Chrome stores all the sign-on secrets into the internal database file called 'Web data' in the current user profile folder. A newer version has moved the login passwords related database into a new file named 'Login Data'.This database file is in SQLite format and contains number of tables storing different kind of data such as auto complete, search keyword, ie7logins etc. in addition to login secrets.
-The logins table mainly contains the information about sign-on secrets such as website URL, username, password fields, etc. All this information is stored in the clear text except passwords which are in encrypted format.
-Google Chrome encrypt the password with the help of CryptProtectData function, built into Windows. Now while this can be a very secure function using a triple-DES algorithm and creating user-specific keys to encrypt the data, it can still be decrypted as long as you are logged into the same account as the user who encrypted it.The CryptProtectData function has a twin, who does the opposite to it; CryptUnprotectData, which... Well, you guessed it, decrypts the data. And obviously this is going to be very useful in trying to decrypt the stored passwords.
+Like other browsers Chrome has a built-in login password manager functionality which keeps track of the login secrets of all visited websites. Whenever a user logs in to any website, they will be prompted to save their credentials for later use and if the user chooses so, then the username and passwords will be stored in an internal  database. So next time onwards, when they visit that same website, they will be automatically logged in using these stored credentials which saves hassle of entering the credentials every time.
+Chrome stores all the sign-on secrets into the internal database file called 'Web data' in the current user profile folder. A newer version has moved the login passwords related database into a new file named 'Login Data'.This database file is in SQLite format and contain number of tables storing different kind of data such as auto complete, search keyword, ie7logins etc. in addition to login secrets.
+The logins table mainly contains the information about sign-on secrets such as website URL, username, password fields, etc. All theise information are stored in clear text except passwords which are encrypted.
+Google Chrome encrypts passwords with the help of CryptProtectData function, built into Windows. Now while this can be a very secure function using a triple-DES algorithm and creating user-specific keys to encrypt the data, it can still be decrypted as long as you are logged into the same account as the user who encrypted it.The CryptProtectData function has a twin, which does the opposite; CryptUnprotectData, which... Well, you guessed it, decrypts the data. Obviously this is going to be very useful while trying to decrypt the stored passwords.
 
 ## Disclaimer
 
-This is for educational purposes only I do not take an responsibility for actions that people use this for.
+This project is for educational purposes only I do not take any responsibilities for the actions people use this for.
 
 
 ### Requierements
@@ -42,7 +42,7 @@ This is for educational purposes only I do not take an responsibility for action
 > - pip install pypiwin32
 > - pip install pycryptodome
 
-### 2 type of exfiltration
+### 2 types of exfiltration
 
 You can choose between two types of exfiltration : 
 
@@ -54,9 +54,9 @@ If you want the result remotely and you don't have internet restriction, it can 
 
 ###### By file
 
-This way can be more adequate if you have restriction with a proxy for the email connection and if you have a physical access to the machine.
-This version work goods with rubber ducky or bash bunny or flipper zero
-The script will grab the password and wrote it to a file. Feel free to specify an output file and add command to clean the log 
+This way might be more adequate if you have restrictions with a proxy for emails sending and if you have physical access to the machine.
+This version works well with rubber ducky or bash bunny or flipper zero.
+The script will grab the passwords and write them to a file. Feel free to specify an output file and to add a command to clean the logs.
 
 ![Alt Text](https://media.giphy.com/media/KV89f6lkh0asIu9vZN/giphy.gif)
 
@@ -67,7 +67,7 @@ Youtube link : https://youtu.be/3LgiQ_YQL6w
 
 ###### By email
 
-You have to change de value of the following lines :
+You have to change the following placeholders :
 
 24-25 : enter the information taken from the supplier's website
 28-30 : enter the information on your e-mail address
@@ -97,7 +97,7 @@ I have reproduced the installation file of Windows Edge as an example.
 
 ### Detection
 
-We presume that your anti-virus doesn't detect the malware (Highly likely if it is windows defender). You can detect this type of exfiltration with several SPLUNK rules :
+We assume that your anti-virus doesn't detect the malware (Highly likely if it is windows defender). You can detect this type of exfiltration with several SPLUNK rules :
 
 
  	 index=yourindex  source="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational" process="*notepad.exe*" AND process="*.txt*" | table _time host app process process_current_directory user
@@ -117,8 +117,8 @@ You can test this alert with PowerShell and the following command :
 
 ###### False positive
 
-In a large computer network, it is necessary to segment the area of this alert, in fact it is better to target end-user PCs, employees and any machine where performing automatic file writing operations is not at all usual in the work habits of the users.
-You could have false positives if this alert is activated on a perimeter where patch deployment or other maintenance operations are common.
+In large computer networks, it is necessary to segment the area of this alert, in fact it is a better idea to target end-user PCs, employees or any machines where performing automatic file writing operations is not unusual in the work habits of the users.
+You could face false positives if this alert is activated on a perimeter where patch deployment or other maintenance operations are common.
 
 ### Flipper zero / Rubber Ducky (bad usb configuration)
 
