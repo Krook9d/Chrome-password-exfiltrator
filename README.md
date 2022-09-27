@@ -40,7 +40,7 @@ This is for educational purposes only I do not take an responsibility for action
 ### Requierements
 
 > - pip install pypiwin32
- - pip install pycryptodome
+> - pip install pycryptodome
 
 ### 2 type of exfiltration
 
