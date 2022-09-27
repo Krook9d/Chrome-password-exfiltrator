@@ -4,8 +4,8 @@
 
 **Table of Contents**
 
-[# About The Project](https://github.com/Krook9d/Chrome-password-exfiltrator/blob/main/README.md#about-the-project)
-[### Requierements](https://github.com/Krook9d/Chrome-password-exfiltrator/blob/main/README.md#requierements)
+[About The Project](https://github.com/Krook9d/Chrome-password-exfiltrator/blob/main/README.md#about-the-project)
+[Requierements](https://github.com/Krook9d/Chrome-password-exfiltrator/blob/main/README.md#requierements)
 [2 type of exfiltration](https://github.com/Krook9d/Chrome-password-exfiltrator/blob/main/README.md#2-type-of-exfiltration)
 [Configuration](https://github.com/Krook9d/Chrome-password-exfiltrator/blob/main/README.md#configuration)
 [.EXE convertion](https://github.com/Krook9d/Chrome-password-exfiltrator/blob/main/README.md#exe-convertion-)
