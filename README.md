@@ -127,5 +127,9 @@ You could have false positives if this alert is activated on a perimeter where p
 	 coming soon
 
 
-### Links
+### Patchlog
+
+- Flipper zero / Rubber Ducky (bad usb configuration) 
+- Design of mail template for exfiltration
+- Design of file template for exfiltration
 
