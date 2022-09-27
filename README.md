@@ -5,13 +5,21 @@
 **Table of Contents**
 
 [About The Project](https://github.com/Krook9d/Chrome-password-exfiltrator/blob/main/README.md#about-the-project)
+
 [Requierements](https://github.com/Krook9d/Chrome-password-exfiltrator/blob/main/README.md#requierements)
+
 [2 type of exfiltration](https://github.com/Krook9d/Chrome-password-exfiltrator/blob/main/README.md#2-type-of-exfiltration)
+
 [Configuration](https://github.com/Krook9d/Chrome-password-exfiltrator/blob/main/README.md#configuration)
+
 [.EXE convertion](https://github.com/Krook9d/Chrome-password-exfiltrator/blob/main/README.md#exe-convertion-)
+
 [Detection](https://github.com/Krook9d/Chrome-password-exfiltrator/blob/main/README.md#detection)
+
 [Testing](https://github.com/Krook9d/Chrome-password-exfiltrator/blob/main/README.md#testing)
+
 [False positive](https://github.com/Krook9d/Chrome-password-exfiltrator/blob/main/README.md#false-positive)
+
 [Flipper zero/Rubber Ducky](https://github.com/Krook9d/Chrome-password-exfiltrator/blob/main/README.md#flipper-zero-bad-usb-configuration)
 
 # About The Project
@@ -113,7 +121,7 @@ You can test this alert with PowerShell and the following command :
 In a large computer network, it is necessary to segment the area of this alert, in fact it is better to target end-user PCs, employees and any machine where performing automatic file writing operations is not at all usual in the work habits of the users.
 You could have false positives if this alert is activated on a perimeter where patch deployment or other maintenance operations are common.
 
-### Flipper zero (bad usb configuration)
+### Flipper zero / Rubber Ducky (bad usb configuration)
 
 
 	 coming soon
